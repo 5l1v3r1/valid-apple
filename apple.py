@@ -53,7 +53,7 @@ def check(i):
             stat = '\x1b[31mDIE'
             if res['used']:
                 stat = '\x1b[32mLIVE'
-                open('valid_apple.txt', 'w').write(i[1] + '\n')
+                open('valid_apple.txt', 'a').write(i[1] + '\n')
                 
             ui += ('{0}\x1b[0m ] Thread-{1}: {2}'.format(stat, i[0], i[1]))
             if res['appleOwnedDomain']:
