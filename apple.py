@@ -1,3 +1,5 @@
+#!usr/bin/python2
+# encoding: utf-8
 
 """
       pesan dari saya.. gk usah diaku² hasil kodingan kalian trus dibangga²in
@@ -42,7 +44,6 @@ def check(i):
 
     stat = '\x1b[33mUNCHECK'
     owndmn, rscd = '', ''
-    ui = '[ '
 
     if res:
         stat = '\x1b[31;1mUNKNOW'
@@ -51,14 +52,12 @@ def check(i):
             stat = '\x1b[31mDIE'
             if res['used']:
                 stat = '\x1b[32mLIVE'
-
-            ui += ('{0}\x1b[0m ] Thread-{1}: {2}'.format(stat, i[0], i[1]))
             if res['appleOwnedDomain']:
-                ui += ' [apple owned domain]'
+                owndmn = '[apple owned domain]'
             if res['isRecycledDomain']:
-                ui += ' [Recycled Domain]'
+                rscd = '[Recycled Domain]'
 
-    print (ui)
+    print ('[ {0}\x1b[0m ] Thread-{4}: {1} {2} {3}'.format(stat, i[1], rscd, owndmn, i[0]))
 
 print 'follow me: https://m.facebook.com/zvtyrdt.id\n'
 
